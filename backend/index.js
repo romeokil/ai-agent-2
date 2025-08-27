@@ -8,7 +8,7 @@ const _dirname=path.resolve();
 console.log("_dirname",_dirname);
 // CORS options
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "https://ai-agent-2-h19p.onrender.com",
   credentials: "true",
 };
 app.use(express.json());

@@ -29,7 +29,7 @@ export const fetchWeatherData = async (formData)=> {
     console.log('Request Payload after embedding location:', requestPayload);
 
     // Make API call to the backend
-    const response = await fetch('http://localhost:5000/weather-agent', {
+    const response = await fetch('https://ai-agent-2-h19p.onrender.com/weather-agent', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
