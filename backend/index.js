@@ -1,9 +1,11 @@
 import express from "express";
 import fetch from "node-fetch";
 import cors from "cors";
+import path from "path"
 
 const app = express();
-
+const _dirname=path.resolve();
+console.log("_dirname",_dirname);
 // CORS options
 const corsOptions = {
   origin: "http://localhost:5173",
@@ -105,6 +107,11 @@ Provide weather details and activities in **strict JSON format**:
     res.status(500).json({ error: "Something went wrong!" });
   }
 });
+
+app.use(express.static(path.join(_dirname,"/frontend/dist")));
+app.get("*",(_,res)=>{
+  res.sendFile(path.resolve(_dirname,"frontend","dist","index.html"))
+})
 
 // Start server
 app.listen(5000, () =>
